@@ -6,7 +6,6 @@ import socket
 import struct
 import os.path
 
-
 class JsonToTxt:
 
     def __init__(self):
@@ -29,17 +28,13 @@ class JsonToTxt:
                 try:
                     info = json.loads(eachLine)
                     self.splitIp(info["host"], info)
-                    # loglen = len(info["log"])
-                    # while i < loglen:
-                        # print(info["log"][i])
-                        # i += 1
                 except:
                     break
 
     def createTxt(self):
 
         keys = sorted(self.Ipdict)
-        print('Converting...: ' + self.Dirpath)
+        print('Converting...')
         if os.path.exists(self.Dirpath+'/JsonToTxt'):
             dirpath = self.Dirpath+'JsonToTxt'
         else:
